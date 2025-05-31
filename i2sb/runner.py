@@ -156,7 +156,7 @@ class WRS(nn.Module):
     def forward(self, pred, label, weight):
         loss = F.mse_loss(pred, label)
         for i in weight:
-            loss += 1*F.mse_loss(i, torch.full_like(i, 1/weight.shape[0]))
+            loss += 1*F.mse_loss(i, torch.full_like(i, 1/len(weight)))
         return loss
 
 class Runner(object):
