@@ -191,7 +191,7 @@ def main(opt):
     corrupt_method = build_corruption(opt, log)
 
     run = Runner(opt, log)
-    run.generation(opt, val_dataset, corrupt_method, True)
+    run.generation(opt, val_dataset, corrupt_method)
     log.info("Finish!")
 
 if __name__ == '__main__':
