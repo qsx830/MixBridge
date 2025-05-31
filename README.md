@@ -83,13 +83,13 @@ python backdoor.py --name=backdoor-single --n-gpu-per-node=1 --corrupt=inpaint-f
 Conduct the I2I generation task in the validation set. It takes a while for image generation. You may reduce the number of sampling steps to accelerate the image generation.
 
 ```bash
-python evaluation_fid.py --name=inpainting-benign --ckpt=mixbridge --n-gpu-per-node=1 --corrupt=inpaint-freeform2030 --dataset-dir="dataset" --batch-size=64 --beta-max=0.3 --log-dir='log' --log-writer='tensorboard' --backdoor-dir='backdoor-dataset1' --gpu=0 --image-size=256 --trigger-size=64 --combine
+python evaluation.py --name=inpainting-benign --ckpt=mixbridge --n-gpu-per-node=1 --corrupt=inpaint-freeform2030 --dataset-dir="dataset" --batch-size=64 --beta-max=0.3 --log-dir='log' --log-writer='tensorboard' --backdoor-dir='backdoor-dataset1' --gpu=0 --image-size=256 --trigger-size=64 --combine
 ```
 
 Conduct the heterogeneous backdoor attacks.
 
 ```bash
-python evaluation_fid.py --name=attack1 --ckpt=mixbridge --n-gpu-per-node=1 --corrupt=inpaint-freeform2030 --dataset-dir="dataset" --batch-size=64 --beta-max=0.3 --log-dir='log' --log-writer='tensorboard' --backdoor-dir='backdoor-dataset1' --gpu=0 --image-size=256 --trigger-size=64 --combine --backdoor-infer --rightbottom
+python evaluation.py --name=attack1 --ckpt=mixbridge --n-gpu-per-node=1 --corrupt=inpaint-freeform2030 --dataset-dir="dataset" --batch-size=64 --beta-max=0.3 --log-dir='log' --log-writer='tensorboard' --backdoor-dir='backdoor-dataset1' --gpu=0 --image-size=256 --trigger-size=64 --combine --backdoor-infer --rightbottom
 ```
 
 ## Citation
